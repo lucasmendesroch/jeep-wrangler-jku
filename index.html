@@ -3,7 +3,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Jeep Wrangler JKU 2015 — A Oportunidade</title>
+  <title>Jeep Wrangler JKU 2015 Sport | V6 3.6 Pentastar 284cv | Blumenau SC</title>
+  <meta name="description" content="Jeep Wrangler JKU 2015 Sport Unlimited V6 3.6 Pentastar 284cv, 123mil km, suspensão AEV 2,5pol completa, guincho, pneus 35 novos. R$ 210.000. Blumenau/SC." />
+
+  <!-- Open Graph / WhatsApp / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Jeep Wrangler JKU 2015 — Isso não é um anúncio. É uma oportunidade." />
+  <meta property="og:description" content="V6 3.6 Pentastar 284cv · Suspensão AEV completa · Guincho · Pneus 35 novos · Revisado na RHC · R$ 210.000 · Blumenau/SC" />
+  <meta property="og:image" content="images/542815154_17913945471192468_8952583730321818409_n.jpg" />
+  <meta property="og:image:width" content="1080" />
+  <meta property="og:image:height" content="1080" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Jeep Wrangler JKU 2015 — Isso não é um anúncio. É uma oportunidade." />
+  <meta name="twitter:description" content="V6 3.6 Pentastar 284cv · Suspensão AEV completa · Guincho · Pneus 35 novos · R$ 210.000" />
+  <meta name="twitter:image" content="images/542815154_17913945471192468_8952583730321818409_n.jpg" />
+
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
@@ -151,11 +167,44 @@
       animation: scrollPulse 2s infinite;
     }
 
+    /* ─── URGENCY BADGE ────────────────────────────────── */
+    .urgency-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #fff;
+      background: rgba(255,60,60,0.15);
+      border: 1px solid rgba(255,80,80,0.5);
+      padding: 7px 18px;
+      margin-bottom: 20px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.05s forwards;
+    }
+
+    .urgency-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #ff4444;
+      animation: blink 1.5s infinite;
+      flex-shrink: 0;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.2; }
+    }
+
     /* ─── GALLERY ──────────────────────────────────────── */
     #gallery {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-template-rows: 400px 400px;
+      grid-template-columns: repeat(3, 1fr);
+      grid-auto-rows: 320px;
       gap: 4px;
     }
 
@@ -164,9 +213,8 @@
       position: relative;
     }
 
-    .gallery-item:first-child {
-      grid-row: 1 / 3;
-    }
+    .gallery-item.wide { grid-column: span 2; }
+    .gallery-item.tall { grid-row: span 2; }
 
     .gallery-item img {
       width: 100%;
@@ -349,6 +397,69 @@
       color: var(--gold);
     }
 
+    /* ─── VALUE SECTION ────────────────────────────────── */
+    #value {
+      background: var(--dark);
+      padding: 120px 40px;
+      border-top: 1px solid #1a1a1a;
+    }
+
+    #value .section-label { text-align: center; display: block; margin-bottom: 16px; }
+
+    #value h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(2rem, 5vw, 4rem);
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin-bottom: 64px;
+    }
+
+    .value-table {
+      max-width: 700px;
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    .value-table tr {
+      border-bottom: 1px solid #1e1e1e;
+    }
+
+    .value-table td {
+      padding: 18px 8px;
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    .value-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+      color: rgba(255,255,255,0.7);
+      white-space: nowrap;
+    }
+
+    .value-table .total-row td {
+      border-top: 1px solid rgba(201,168,76,0.4);
+      border-bottom: none;
+      padding-top: 24px;
+      color: var(--gold-light);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .value-tagline {
+      text-align: center;
+      margin-top: 48px;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(1.5rem, 4vw, 2.5rem);
+      letter-spacing: 0.05em;
+      color: rgba(255,255,255,0.5);
+    }
+
+    .value-tagline strong {
+      color: var(--gold);
+    }
+
     /* ─── CTA FINAL ────────────────────────────────────── */
     #final-cta {
       background: #000;
@@ -474,14 +585,23 @@
     /* ─── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 700px) {
       #gallery {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 200px;
       }
-      .gallery-item:first-child { grid-row: auto; }
-      .gallery-item { height: 260px; }
+      .gallery-item.wide { grid-column: span 2; }
+      .gallery-item.tall { grid-row: auto; }
       .specs-grid { gap: 40px; }
       footer { flex-direction: column; align-items: flex-start; }
       footer small { text-align: left; }
+      .value-table { font-size: 0.8rem; }
+    }
+
+    @media (max-width: 480px) {
+      #gallery {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 240px;
+      }
+      .gallery-item.wide { grid-column: auto; }
     }
   </style>
 </head>
@@ -491,6 +611,7 @@
   <section id="hero">
     <div id="hero-bg"></div>
     <div class="hero-content">
+      <div class="urgency-badge"><span class="urgency-dot"></span>1 unidade disponível</div>
       <span class="hero-badge">Jeep Wrangler JKU &middot; 2015 &middot; Sport Unlimited</span>
       <h1 class="hero-title">Isso não é<br>um <span>anúncio.</span></h1>
       <p class="hero-sub">É uma oportunidade.</p>
@@ -504,14 +625,36 @@
 
   <!-- ─── GALLERY ─── -->
   <section id="gallery">
+    <!-- Row 1 -->
+    <div class="gallery-item tall">
+      <img src="images/542815154_17913945471192468_8952583730321818409_n.jpg" alt="Jeep Wrangler JKU na trilha" />
+    </div>
+    <div class="gallery-item wide">
+      <img src="images/WhatsApp Image 2026-03-19 at 08.20.09.jpeg" alt="Jeep Wrangler JKU - Frontal" />
+    </div>
+    <!-- Row 2 (tall item continues) -->
+    <div class="gallery-item">
+      <img src="images/WhatsApp Image 2026-03-19 at 08.20.09s.jpeg" alt="Jeep Wrangler JKU - Lateral" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/475580064_17888676216192468_4601578839041902569_n.jpg" alt="Jeep Wrangler JKU - Traseira sem capota" />
+    </div>
+    <!-- Row 3 -->
+    <div class="gallery-item wide">
+      <img src="images/626024721_18091982689956203_236344585252844925_n.jpg" alt="Jeep Wrangler JKU em trilha de mata" />
+    </div>
+    <div class="gallery-item">
+      <img src="images/523750910_17908416567192468_7478356654812014914_n.jpg" alt="Jeep Wrangler JKU - Traseira na oficina" />
+    </div>
+    <!-- Row 4 -->
+    <div class="gallery-item">
+      <img src="images/475247560_17888892024192468_2565913697654807005_n.jpg" alt="Jeep Wrangler JKU - Frontal com natureza" />
+    </div>
     <div class="gallery-item">
       <img src="images/WhatsApp Image 2026-03-19 at 08.20.09d.jpeg" alt="Jeep Wrangler JKU - Vista frontal" />
     </div>
     <div class="gallery-item">
-      <img src="images/WhatsApp Image 2026-03-19 at 08.20.09.jpeg" alt="Jeep Wrangler JKU - Frontal lateral" />
-    </div>
-    <div class="gallery-item">
-      <img src="images/WhatsApp Image 2026-03-19 at 08.20.09s.jpeg" alt="Jeep Wrangler JKU - Lateral" />
+      <img src="images/654278432_18075282365430512_5614666217579193082_n.jpg" alt="Jeep Wrangler JKU com vista para o mar" />
     </div>
   </section>
 
@@ -592,6 +735,28 @@
     </div>
   </section>
 
+  <!-- ─── VALUE ─── -->
+  <section id="value">
+    <span class="section-label reveal">O valor real</span>
+    <h2 class="reveal">Quanto custaria<br>montar do zero?</h2>
+    <table class="value-table reveal">
+      <tbody>
+        <tr><td>Suspensão AEV 2,5" completa (Bilstein, Panhard, bump stops…)</td><td>~ R$ 25.000</td></tr>
+        <tr><td>Para-choque dianteiro + Guincho Ekron (Power Offroad)</td><td>~ R$ 9.000</td></tr>
+        <tr><td>Para-choque traseiro em aço (Power Offroad)</td><td>~ R$ 4.500</td></tr>
+        <tr><td>Rock Sliders em aço (Power Offroad)</td><td>~ R$ 3.500</td></tr>
+        <tr><td>5 pneus Atturo 35×12,5R17 novos</td><td>~ R$ 7.500</td></tr>
+        <tr><td>Paralamas alargados na cor</td><td>~ R$ 3.000</td></tr>
+        <tr><td>Faróis, piscas e milhas full LED</td><td>~ R$ 2.500</td></tr>
+        <tr><td>Sistema de reservatório de água + chuveirinho</td><td>~ R$ 1.500</td></tr>
+        <tr><td>Botoeiras na coluna + carregador USB</td><td>~ R$ 800</td></tr>
+        <tr><td>Mão de obra especializada (Oficina RHC)</td><td>~ R$ 5.000</td></tr>
+        <tr class="total-row"><td><strong>Total em acessórios e preparação</strong></td><td><strong>~ R$ 62.300</strong></td></tr>
+      </tbody>
+    </table>
+    <p class="value-tagline reveal">Você leva tudo isso <strong>incluso.</strong></p>
+  </section>
+
   <!-- ─── TRUST ─── -->
   <section id="trust">
     <p class="section-label reveal">Procedência</p>
@@ -608,8 +773,9 @@
     <p class="section-label reveal">Pronto para a próxima aventura?</p>
     <h2 class="reveal">Esse Jeep<br>está esperando<br><span style="color:var(--gold)">por você.</span></h2>
     <div class="price-block reveal">
-      <p class="price-label">Valor</p>
+      <p class="price-label">Valor · Único exemplar nesta configuração</p>
       <p class="price-value">R$ 210.000</p>
+      <p style="font-size:0.75rem;color:var(--gray);margin-top:12px;letter-spacing:0.1em;">Acessórios e preparação avaliados em ~R$ 62.000 — incluso no preço.</p>
     </div>
     <a
       href="https://wa.me/5551997892216?text=Ol%C3%A1%2C+tenho+interesse+no+Jeep+Wrangler+JKU+2015+%28BAH6175%29."
