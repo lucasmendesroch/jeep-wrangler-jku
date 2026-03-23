@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "jku-site",
+      "runtimeExecutable": "C:\\Users\\lucasmendes_frwk\\AppData\\Local\\nvm\\v24.13.1\\node.exe",
+      "runtimeArgs": ["-e", "require('http').createServer((req,res)=>{const fs=require('fs'),path=require('path');let u=decodeURIComponent(req.url.split('?')[0]);let f=path.join('C:/Users/lucasmendes_frwk/my projects/jku',u==='/'?'index.html':u);fs.readFile(f,(e,d)=>{if(e){res.writeHead(404);res.end();}else{const ext=path.extname(f).toLowerCase();const m={'.html':'text/html','.jpg':'image/jpeg','.jpeg':'image/jpeg','.png':'image/png','.css':'text/css','.js':'text/javascript'};res.writeHead(200,{'Content-Type':m[ext]||'application/octet-stream'});res.end(d);}});}).listen(3000)"],
+      "port": 3000
+    }
+  ]
+}
