@@ -1009,19 +1009,13 @@
 
     .gallery-grid img {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 1/1;
       object-fit: cover;
       display: block;
       transition: opacity 0.3s;
     }
 
     .gallery-grid img:hover { opacity: 0.85; }
-
-    .gallery-grid .gallery-featured {
-      grid-column: span 2;
-      grid-row: span 2;
-      aspect-ratio: auto;
-    }
 
     /* ================================================================
        20. ANIMATIONS
@@ -1064,12 +1058,6 @@
         grid-template-columns: 1fr 1fr;
       }
 
-      .gallery-grid .gallery-featured {
-        grid-column: span 2;
-        grid-row: span 1;
-        aspect-ratio: 16/9;
-      }
-
       .photo-break { min-height: 50vh; }
 
       .photo-break-content { padding: 32px 24px; }
@@ -1107,12 +1095,7 @@
 
     @media (max-width: 480px) {
       .gallery-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .gallery-grid .gallery-featured {
-        grid-column: span 1;
-        aspect-ratio: 16/9;
+        grid-template-columns: 1fr 1fr;
       }
 
       .specs-grid {
@@ -1376,7 +1359,7 @@
         <span class="section-label reveal">Galeria</span>
         <h2 class="reveal">Veja de perto</h2>
         <div class="gallery-grid reveal">
-          <img class="gallery-featured" src="images/542815154_17913945471192468_8952583730321818409_n.jpg" alt="Jeep Wrangler JKU 2015 branco preparado para trilha, vista frontal em terreno off-road" loading="lazy" width="1080" height="1080" />
+          <img src="images/542815154_17913945471192468_8952583730321818409_n.jpg" alt="Jeep Wrangler JKU 2015 branco preparado para trilha, vista frontal em terreno off-road" loading="lazy" width="1080" height="1080" />
           <img src="images/626024721_18091982689956203_236344585252844925_n.jpg" alt="Jeep Wrangler JKU 2015 com suspensão AEV e pneus 35 polegadas em trilha" loading="lazy" width="1080" height="1080" />
           <img src="images/654278432_18075282365430512_5614666217579193082_n.jpg" alt="Jeep Wrangler JKU 2015 branco em ambiente off-road, Blumenau SC" loading="lazy" width="1080" height="1080" />
           <img src="images/WhatsApp Image 2026-03-19 at 08.20.09.jpeg" alt="Jeep Wrangler JKU 2015 Sport Unlimited vista lateral com preparação completa" loading="lazy" width="1080" height="1080" />
