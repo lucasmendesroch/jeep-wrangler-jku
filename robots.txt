@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://lucasmendesroch.github.io/jeep-wrangler-jku/sitemap.xml
